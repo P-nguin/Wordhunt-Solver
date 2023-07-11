@@ -1,0 +1,17 @@
+.GridBox{
+    background-color: white;
+    
+    border-radius: 10px;
+    
+    aspect-ratio: 1;
+
+    flex: 1 1 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Input {
+    margin: auto;
+}

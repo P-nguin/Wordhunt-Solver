@@ -1,0 +1,14 @@
+.Grid {
+    background-color: aqua;
+
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    width: 40%;
+
+    padding: 2%, 2%, 2%, 2%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
