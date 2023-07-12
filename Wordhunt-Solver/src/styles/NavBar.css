@@ -1,0 +1,16 @@
+.navBar--header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    padding: 20px;
+}
+
+.navBar--title{
+    font-family: 'Libre Baskerville', serif;
+}
+
+.navBar--logo{
+    height:100%;
+    margin-right: 10px;
+}
+
