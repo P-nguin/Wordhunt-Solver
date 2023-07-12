@@ -13,24 +13,37 @@ function InputGrid() {
 		return temp;
 	});
 
-	console.log(gridInput);
-
-	function onChange(name) {
-		let idx = name.split(" ");
-	}
+	console.log("hi");
 
 	const gridItems = [];
 	for (let i = 0; i < 16; i++) {
 		gridItems.push(
-			<InputBox key={i} value={gridInput[i]} name={"InputBox " + i} />
+			<InputBox
+				key={i}
+				value={gridInput[i]}
+				name={"InputBox " + i}
+				handleChange={(event) => {
+					let name = event.target.name;
+					let idx = parseInt(name.split(" ")[1]);
+					changeGridInput((prev) => {
+						let temp = [...prev];
+						temp[idx] = event.target.value
+							.charAt(event.target.value.length - 1)
+							.toUpperCase();
+						return temp;
+					});
+				}}
+			/>
 		);
 	}
 
 	return (
-		<div className="container">
-			{gridItems}
-			<div></div>
-		</div>
+		<>
+			<div className="container">
+				{gridItems}
+				<div></div>
+			</div>
+		</>
 	);
 }
 
