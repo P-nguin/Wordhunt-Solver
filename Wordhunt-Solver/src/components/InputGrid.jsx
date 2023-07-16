@@ -18,7 +18,7 @@ function InputGrid() {
 	const gridItems = [];
 	for (let i = 0; i < 16; i++) {
 		gridItems.push(
-			<InputBox
+			<InputBox 
 				key={i}
 				value={gridInput[i]}
 				name={"InputBox " + i}
@@ -33,6 +33,7 @@ function InputGrid() {
 						return temp;
 					});
 				}}
+
 			/>
 		);
 	}
@@ -41,7 +42,6 @@ function InputGrid() {
 		<>
 			<div className="container">
 				{gridItems}
-				<div></div>
 			</div>
 		</>
 	);
