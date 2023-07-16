@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import InputBox from "./InputBox";
+import Button from "./Button";
+import Solve from "./Solve ";
 
 import "../styles/InputGrid.css";
 
@@ -18,7 +20,7 @@ function InputGrid() {
 	const gridItems = [];
 	for (let i = 0; i < 16; i++) {
 		gridItems.push(
-			<InputBox 
+			<InputBox
 				key={i}
 				value={gridInput[i]}
 				name={"InputBox " + i}
@@ -33,16 +35,14 @@ function InputGrid() {
 						return temp;
 					});
 				}}
-
 			/>
 		);
 	}
 
 	return (
 		<>
-			<div className="container">
-				{gridItems}
-			</div>
+			<div className="container">{gridItems}</div>
+			<Button grid handleClick={() => Solve(gridInput)} />
 		</>
 	);
 }
