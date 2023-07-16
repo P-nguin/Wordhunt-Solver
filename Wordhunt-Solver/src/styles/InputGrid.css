@@ -4,4 +4,6 @@
     grid-template-rows: repeat(4, 80px);
 
     border-color: aqua;
+    grid-gap: 2px;
+    
 }

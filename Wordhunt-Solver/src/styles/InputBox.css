@@ -1,4 +1,7 @@
 .input-box {
     text-align: center;
     background-color: black;
+    color:white;
+    font-family: 'Pangolin', cursive;
+    font-size: 40px;
 }
