@@ -1,7 +1,13 @@
 .input-box {
     text-align: center;
     background-color: #30d6db;
-    color:white;
-    font-family: 'Pangolin', cursive;
-    font-size: 40px;
+    color:black;
+    font-family: 'Lilita One', cursive;
+    font-size: 55px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    outline-color: black;
+}
+
+.input-box:focus{
+    background-color: #70F6E1;
 }
