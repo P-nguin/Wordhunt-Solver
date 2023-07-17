@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 import InputBox from "./InputBox";
-import Button from "./Button";
-import Solve from "./Solve ";
+import CalculateButton from "./CalculateButton";
 
 import "../styles/InputGrid.css";
 
@@ -42,7 +41,7 @@ function InputGrid() {
 	return (
 		<>
 			<div className="container">{gridItems}</div>
-			<Button grid handleClick={() => Solve(gridInput)} />
+			<CalculateButton input={gridInput} />
 		</>
 	);
 }
