@@ -15,6 +15,7 @@ function InputGrid() {
 		return temp;
 	});
 	const [table, setTable] = useState(false);
+	const [foundWords, setFoundWords] = useState([]);
 
 	const gridItemsRefs = [];
 	const gridItems = [];
@@ -49,9 +50,13 @@ function InputGrid() {
 		<>
 			<div className="grid-table-container">
 				<div className="input-container">{gridItems}</div>
-				{table && <WordsTable />}
+				{table && <WordsTable wordsList={foundWords} />}
 			</div>
-			<CalculateButton input={gridInput} setTable={setTable} />
+			<CalculateButton
+				input={gridInput}
+				setTable={setTable}
+				setFoundWords={setFoundWords}
+			/>
 		</>
 	);
 }

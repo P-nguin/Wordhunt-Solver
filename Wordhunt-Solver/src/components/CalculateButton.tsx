@@ -16,7 +16,7 @@ function CalculateButton(props) {
 		[-1, 1],
 	];
 	const input: string[] = props.input;
-	let found: string[] = props.found;
+	let found: string[] = [];
 	const setTable = props.setTable;
 
 	function makeTrie() {
@@ -60,7 +60,7 @@ function CalculateButton(props) {
 				);
 			}
 		}
-
+		props.setFoundWords((prev) => found);
 		setTable(true);
 	}
 
