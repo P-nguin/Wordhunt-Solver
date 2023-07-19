@@ -4,48 +4,6 @@ import WordBank from "../assets/WordBank.json";
 import redo from "../assets/redo.png";
 
 function CalculateButton(props) {
-<<<<<<< Updated upstream
-  let wordList = new Map<String, Boolean>();
-  const { input } = props;
-  useEffect(() => {
-    wordList = createLookUpMap(WordBank[0].data);
-    console.log(wordList);
-  }, []);
-
-  function createLookUpMap(arr: string[]) {
-    return new Map(arr.map((item) => [item, true]));
-  }
-  function handleClick(str: string[]) {
-    console.log(str);
-    let grid: string[][] = [];
-    for (let i = 0, cnt = 0; i < 4; i++) {
-      let temp: string[] = [];
-      for (let j = 0; j < 4; j++, cnt++) {
-        temp.push(str[cnt]);
-      }
-      grid.push(temp);
-    }
-
-    var dir = [
-      [1, 0],
-      [-1, 0],
-      [0, 1],
-      [0, -1],
-      [1, 1],
-      [-1, -1],
-      [1, -1],
-      [-1, 1],
-    ];
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        let vis: boolean[][] = [];
-        for (let k = 0; k < 4; k++) vis.push([false, false, false, false]);
-      }
-    }
-  }
-
-  function solve(r: number) {}
-=======
 	var rootNode = new TrieNode();
 	const input: string[] = props.input;
 	let found: string[] = props.found;
@@ -136,16 +94,15 @@ function CalculateButton(props) {
 			}
 		}
 	}
->>>>>>> Stashed changes
 
-  return (
-    <div className="button-container">
-      <button className="button" onClick={() => handleClick(input)}>
-        solve
-      </button>
-      <img src={redo} className="button-redo" />
-    </div>
-  );
+	return (
+		<div className="button-container">
+			<button className="button" onClick={() => handleClick(input)}>
+				solve
+			</button>
+			<img src={redo} className="button-redo" />
+		</div>
+	);
 }
 
 class TrieNode {
