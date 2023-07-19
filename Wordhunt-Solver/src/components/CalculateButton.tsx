@@ -19,6 +19,7 @@ function CalculateButton(props) {
 	];
 
 	function makeTrie() {
+		console.log("no");
 		WordBank[0].data.map((curStr) => {
 			let curNode = rootNode;
 			for (let i = 0; i < curStr.length; i++) {
