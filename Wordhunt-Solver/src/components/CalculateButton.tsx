@@ -5,8 +5,6 @@ import redo from "../assets/redo.png";
 
 function CalculateButton(props) {
 	var rootNode = new TrieNode();
-	const input: string[] = props.input;
-	let found: string[] = props.found;
 	var dir = [
 		[1, 0],
 		[-1, 0],
@@ -17,9 +15,11 @@ function CalculateButton(props) {
 		[1, -1],
 		[-1, 1],
 	];
+	const input: string[] = props.input;
+	let found: string[] = props.found;
+	const setTable = props.setTable;
 
 	function makeTrie() {
-		console.log("no");
 		WordBank[0].data.map((curStr) => {
 			let curNode = rootNode;
 			for (let i = 0; i < curStr.length; i++) {
@@ -61,9 +61,10 @@ function CalculateButton(props) {
 			}
 		}
 
-		console.log(found);
+		setTable(true);
 	}
 
+	//When solving with empty grid there error fix!
 	function solve(
 		r: number,
 		c: number,

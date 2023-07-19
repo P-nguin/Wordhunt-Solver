@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/InputBox.css";
 
 function InputBox(props) {
-	const { value, name, handleChange } = props;
+	const { value, name, handleChange, innerRef } = props;
 	return (
 		<input
 			type="text"
@@ -11,6 +11,7 @@ function InputBox(props) {
 			className="input-box"
 			value={value}
 			onChange={handleChange}
+			ref={innerRef}
 		/>
 	);
 }
