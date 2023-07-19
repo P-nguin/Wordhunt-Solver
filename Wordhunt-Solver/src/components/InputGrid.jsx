@@ -23,7 +23,6 @@ function InputGrid() {
 		gridItems.push(
 			<InputBox
 				key={i}
-				id={i}
 				value={gridInput[i]}
 				name={"InputBox " + i}
 				handleChange={(event) => {
@@ -36,28 +35,15 @@ function InputGrid() {
 							.toUpperCase();
 						return temp;
 					});
-					console.log(gridItems[i]);
+
+					if (name !== "InputBox 15") {
+						gridItemsRefs[i + 1].current.focus();
+					}
 				}}
 				innerRef={gridItemsRefs[i]}
 			/>
 		);
 	}
-	/*
-    inputLists.forEach(input => {
-        input.addEventListener("keyup", ()=>{
-        if(input.value.length === input.maxLength && parseInt(input.id) < inputLists.length) {
-                  document.getElementById(parseInt(input.id)+1).focus();
-        }
-      })
-	useEffect(() => {
-		gridItems.map((item) => {
-			item.addEventListener("keyup", () => {
-				console.log(document.getElementById(parseInt(item.id) + 1));
-				document.getElementById(parseInt(item.id) + 1).focus();
-			});
-		});
-	}, []);
-    */
 
 	return (
 		<>
