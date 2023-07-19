@@ -14,8 +14,6 @@ function InputGrid() {
 		return temp;
 	});
 
-	console.log("hi");
-
 	const gridItems = [];
 	for (let i = 0; i < 16; i++) {
 		gridItems.push(
