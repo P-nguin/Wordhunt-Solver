@@ -3,8 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 import InputBox from "./InputBox";
 import CalculateButton from "./CalculateButton";
 import WordsTable from "./WordsTable";
+import Redo from "./RedoButton";
 
 import "../styles/InputGrid.css";
+import "../styles/RedoButton.css";
 
 function InputGrid() {
 	const [gridInput, setGridInput] = useState(() => {
@@ -37,6 +39,7 @@ function InputGrid() {
 						return temp;
 					});
 
+					//bug: pressing delete button also moves cursor forward
 					if (name !== "InputBox 15") {
 						gridItemsRefs[i + 1].current.focus();
 					}
@@ -52,11 +55,15 @@ function InputGrid() {
 				<div className="input-container">{gridItems}</div>
 				{table && <WordsTable wordsList={foundWords} />}
 			</div>
-			<CalculateButton
+
+			<div className="button-container"> 
+				<CalculateButton
 				input={gridInput}
 				setTable={setTable}
 				setFoundWords={setFoundWords}
-			/>
+				/>
+				<Redo/>
+			</div>
 		</>
 	);
 }
