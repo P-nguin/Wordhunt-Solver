@@ -62,7 +62,15 @@ function InputGrid() {
 				setTable={setTable}
 				setFoundWords={setFoundWords}
 				/>
-				<Redo/>
+				<Redo handleClick={() =>{
+					setGridInput((prev) =>{
+						let newLetters =[]
+						for(let i = 0; i < prev.length; i++){
+							newLetters.push("")
+						}
+						return newLetters
+					})
+				}}/>
 			</div>
 		</>
 	);

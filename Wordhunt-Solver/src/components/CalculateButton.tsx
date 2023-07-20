@@ -59,7 +59,11 @@ function CalculateButton(props) {
         );
       }
     }
-    props.setFoundWords((prev) => found);
+
+    props.setFoundWords((prev) => {
+      const sortedFound = [...new Set(found)];
+      return sortedFound;
+    });
     setTable(true);
   }
 
