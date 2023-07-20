@@ -1,0 +1,13 @@
+.button-redo{
+    width: 70px;
+    height: 60px;
+    margin-right:10px;
+    margin-top: 35px;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    width:350px;
+    
+}

@@ -12,7 +12,7 @@ function App() {
 		<div>
 			<NavBar />
 			<div className="grid--container">
-				<InputGrid />
+			<InputGrid />
 			</div>
 			<Footer />
 		</div>

@@ -2,7 +2,7 @@
     background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
     margin-left: 0px;
     margin-top: 35px;
-    margin-right:20px;
+    margin-right:26px;
     padding-bottom: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -12,7 +12,7 @@
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     display: block;
-    width:350px;
+    width:260px;
     height: 60px;
     font-family: 'Archivo Black', sans-serif;
     font-size: 40px;
@@ -24,16 +24,5 @@
     text-decoration: none;
 }
 
-.button-container{
-    display: flex;
-    align-items: center;
-    width:350px;
-    
-}
 
-.button-redo{
-    width: 70px;
-    height: 60px;
-    margin-right:10px;
-    margin-top: 35px;
-}
+
