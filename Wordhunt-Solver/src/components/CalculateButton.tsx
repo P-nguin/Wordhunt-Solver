@@ -62,6 +62,7 @@ function CalculateButton(props) {
 
     props.setFoundWords((prev) => {
       const sortedFound = [...new Set(found)];
+      sortedFound.sort((a, b) => b.length - a.length);
       return sortedFound;
     });
     setTable(true);
