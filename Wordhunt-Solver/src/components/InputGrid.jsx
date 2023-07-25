@@ -43,6 +43,10 @@ function InputGrid() {
 					if (name !== "InputBox 15") {
 						gridItemsRefs[i + 1].current.focus();
 					}
+
+					if(event.key == 'Enter'){
+						console.log("entered");
+					}
 				}}
 				innerRef={gridItemsRefs[i]}
 			/>
@@ -70,6 +74,7 @@ function InputGrid() {
 						}
 						return newLetters
 					})
+					setFoundWords([])
 				}}/>
 			</div>
 		</>
