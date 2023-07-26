@@ -3,12 +3,14 @@ import React from "react";
 import "../styles/WordsTable.css";
 
 function WordsTable(props) {
-	const wordList = [];
+	console.log(props.wordList);
+	/*
 	props.wordsList.map((word) => {
 		wordList.push(<li>{word}</li>);
 	});
+    */
 
-	return <ul>{wordList}</ul>;
+	return <ul></ul>;
 }
 
 export default WordsTable;
