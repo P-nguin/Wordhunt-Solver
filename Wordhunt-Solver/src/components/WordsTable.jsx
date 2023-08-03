@@ -8,7 +8,7 @@ function WordsTable(props) {
 		wordList.push(<li>{word}</li>);
 	});
 
-	return <ul>{wordList}</ul>;
+	return <ul className="wordsTable">{wordList}</ul>;
 }
 
 export default WordsTable;

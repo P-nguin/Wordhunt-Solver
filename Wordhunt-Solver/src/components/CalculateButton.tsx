@@ -63,6 +63,11 @@ function CalculateButton(props) {
     props.setFoundWords((prev) => {
       const sortedFound = [...new Set(found)];
       sortedFound.sort((a, b) => b.length - a.length);
+      for (let first = 0; first < sortedFound.length; first++) {
+        if (sortedFound[first].length != sortedFound[first + 1].length) {
+          sortedFound.splice(first + 1, 0, "new section");
+        }
+      }
       return sortedFound;
     });
     setTable(true);
