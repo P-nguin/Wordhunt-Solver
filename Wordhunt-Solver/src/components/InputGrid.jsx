@@ -54,13 +54,13 @@ function InputGrid() {
 		);
 	}
 
-	console.log(foundWords);
-
 	return (
 		<>
 			<div className="grid-table-container">
 				<div className="input-container">{gridItems}</div>
-				{table && <WordsTable wordsList={CalculateButton.found} />}
+				{table && (
+					<WordsTable foundWords={foundWords} foundPaths={foundPaths} />
+				)}
 			</div>
 
 			<div className="button-container">

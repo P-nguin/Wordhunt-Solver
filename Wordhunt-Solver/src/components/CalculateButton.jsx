@@ -37,7 +37,6 @@ function CalculateButton(props) {
 
 	function handleClick(str) {
 		makeTrie();
-		console.log(rootNode);
 		let found = [];
 		let grid = [];
 		for (let i = 0, cnt = 0; i < 4; i++) {
@@ -72,7 +71,10 @@ function CalculateButton(props) {
 				cc = c + cur[1];
 			if (cr < 0 || cr >= 4 || cc < 0 || cc >= 4 || vis[cr][cc]) continue;
 			if (curNode.children.has(grid[cr][cc])) {
-				if (curNode.children.get(grid[cr][cc]).isWord) {
+				if (
+					curNode.children.get(grid[cr][cc]).isWord &&
+					foundWords.indexOf(curStr + grid[cr][cc]) === -1
+				) {
 					foundWords.push(curStr + grid[cr][cc]);
 					foundPaths.push([...path]);
 				}
