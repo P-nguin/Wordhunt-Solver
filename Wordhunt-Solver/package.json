@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "browserify": "^17.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "require": "^2.4.20",
+    "required": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.4.2",

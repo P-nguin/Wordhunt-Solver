@@ -18,6 +18,7 @@ function InputGrid() {
 	});
 	const [table, setTable] = useState(false);
 	const [foundWords, setFoundWords] = useState([]);
+	const [foundPaths, setFoundPaths] = useState([]);
 
 	const gridItemsRefs = [];
 	const gridItems = [];
@@ -44,7 +45,7 @@ function InputGrid() {
 						gridItemsRefs[i + 1].current.focus();
 					}
 
-					if(event.key == 'Enter'){
+					if (event.key == "Enter") {
 						console.log("entered");
 					}
 				}}
@@ -57,25 +58,29 @@ function InputGrid() {
 		<>
 			<div className="grid-table-container">
 				<div className="input-container">{gridItems}</div>
-				{table && <WordsTable wordsList={foundWords} />}
+				{table && (
+					<WordsTable foundWords={foundWords} foundPaths={foundPaths} />
+				)}
 			</div>
 
-			<div className="button-container"> 
+			<div className="button-container">
 				<CalculateButton
-				input={gridInput}
-				setTable={setTable}
-				setFoundWords={setFoundWords}
+					input={gridInput}
+					setTable={setTable}
+					setFoundWords={setFoundWords}
+					setFoundPaths={setFoundPaths}
 				/>
-				<Redo handleClick={() =>{
-					setGridInput((prev) =>{
-						let newLetters =[]
-						for(let i = 0; i < prev.length; i++){
-							newLetters.push("")
-						}
-						return newLetters
-					})
-					setFoundWords([])
-				}}/>
+				<Redo
+					handleClick={() => {
+						setGridInput((prev) => {
+							let newLetters = [];
+							for (let i = 0; i < prev.length; i++) {
+								newLetters.push("");
+							}
+							return newLetters;
+						});
+					}}
+				/>
 			</div>
 		</>
 	);
