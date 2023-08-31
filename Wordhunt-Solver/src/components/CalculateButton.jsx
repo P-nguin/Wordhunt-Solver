@@ -76,10 +76,10 @@ function CalculateButton(props) {
 					foundWords.indexOf(curStr + grid[cr][cc]) === -1
 				) {
 					foundWords.push(curStr + grid[cr][cc]);
-					foundPaths.push([...path]);
+					foundPaths.push([...path, [cr, cc]]);
 				}
 
-				path.push([cc, cr]);
+				path.push([cr, cc]);
 				vis[cr][cc] = true;
 				solve(
 					cr,

@@ -4,6 +4,7 @@ import InputBox from "./InputBox";
 import CalculateButton from "./CalculateButton";
 import WordsTable from "./WordsTable";
 import Redo from "./RedoButton";
+import Canvas from "./Canvas";
 
 import "../styles/InputGrid.css";
 import "../styles/RedoButton.css";
@@ -19,7 +20,8 @@ function InputGrid() {
 	const [table, setTable] = useState(false);
 	const [foundWords, setFoundWords] = useState([]);
 	const [foundPaths, setFoundPaths] = useState([]);
-
+	const [canvasToggle, setCanvasToggle] = useState(false);
+	const [canvasDrawWord, setCanvasDrawWord] = useState(0);
 	const gridItemsRefs = [];
 	const gridItems = [];
 	for (let i = 0; i < 16; i++) {
@@ -54,12 +56,33 @@ function InputGrid() {
 		);
 	}
 
+	//const gridContainerRef = useRef(); get size somehow, for now just using 344
+	//const gridBoxWidth = gridContainerRef;
+	//console.log(gridBoxWidth.current.clientWidth);
+
 	return (
 		<>
 			<div className="grid-table-container">
+				{canvasToggle && (
+					<div className="canvas">
+						<Canvas
+							gridItemSize={344 / 4}
+							setCanvasToggle={setCanvasToggle}
+							path={foundPaths[foundWords.indexOf(canvasDrawWord)]}
+						>
+							{" "}
+						</Canvas>
+					</div>
+				)}
 				<div className="input-container">{gridItems}</div>
+
 				{table && (
-					<WordsTable foundWords={foundWords} foundPaths={foundPaths} />
+					<WordsTable
+						foundWords={foundWords}
+						foundPaths={foundPaths}
+						setCanvasToggle={setCanvasToggle}
+						setCanvasDrawWord={setCanvasDrawWord}
+					/>
 				)}
 			</div>
 
